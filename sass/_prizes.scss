@@ -1,0 +1,727 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+prizes
+===============================*/
+.prizes {
+  padding-top: 90px;
+  margin-top: 65px;
+  background: color.$main-color2;
+  @include mixin.mq(tab) {
+    padding-top: 80px;
+  }
+  @include mixin.mq(sp) {
+    padding-top: 37px;
+    margin-top: 0;
+    padding-bottom: 34px;
+  }
+}
+
+.prizes__inner {
+}
+.inner {
+  @include mixin.mq(sp) {
+    padding: 0;
+  }
+}
+.prizes__wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1050px;
+
+  @include mixin.mq(tab) {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  @include mixin.mq(sp) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.prizes__heading {
+  text-align: center;
+  background: #fff;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  position: absolute;
+  top: -150px;
+  left: 35%;
+  padding-top: 20px;
+  z-index: 3;
+  @include mixin.mq(tab) {
+    width: 250px;
+    height: 250px;
+    top: -120px;
+  }
+  @include mixin.mq(sp) {
+    width: 200px;
+    height: 200px;
+    top: -80px;
+    left: 25%;
+  }
+}
+
+.prizes__heading-sub-title {
+  margin-top: 8px;
+
+  @include mixin.mq(tab) {
+    font-size: 1.6rem;
+  }
+  @include mixin.mq(sp) {
+    margin-top: 5px;
+    font-size: 1.4rem;
+  }
+}
+
+.prizes__heading-title {
+  margin-top: 15px;
+  padding-bottom: 3px;
+
+  @include mixin.mq(tab) {
+    font-size: 2.5rem;
+    margin-top: 5px;
+  }
+  @include mixin.mq(sp) {
+    font-size: 2rem;
+    margin-top: 5px;
+  }
+}
+.prizes__body {
+  background: #fff;
+  margin-top: 70px;
+  padding-bottom: 80px;
+  border-radius: 24px;
+  margin-bottom: -18px;
+  @include mixin.mq(sp) {
+    padding-bottom: 40px;
+    margin-top: 50px;
+  }
+}
+.prizes__body-left-bg {
+  height: 86px;
+  width: 315px;
+  position: absolute;
+  top: -62px;
+  left: 15px;
+  @include mixin.mq(tab) {
+    width: 200px;
+    height: 60px;
+    top: -40px;
+    left: 25px;
+  }
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+.prizes__body-right-bg {
+  height: 86px;
+  width: 315px;
+  position: absolute;
+  top: -62px;
+  right: 10px;
+  @include mixin.mq(tab) {
+    width: 200px;
+    height: 60px;
+    top: -40px;
+    right: 25px;
+  }
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+.prizes__lead {
+  position: absolute;
+  top: 65px;
+  left: 9%;
+  z-index: 7;
+  color: color.$base-color;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  @include mixin.mq(tab) {
+    left: 24.5%;
+  }
+  @include mixin.mq(sp) {
+    font-size: 1.2rem;
+    left: 7%;
+    top: 60px;
+  }
+}
+
+.prizes__body-top {
+  padding-top: 172px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  @include mixin.mq(tab) {
+    gap: 36px;
+  }
+
+  @include mixin.mq(sp) {
+    padding-top: 141px;
+    gap: 15px;
+  }
+}
+
+.prizes__body-top-box-left:hover  .prizes__body-top-box-left-image img{
+  transform: scale(1.1); /* ホバー時の拡大率を設定 */
+  transition: transform 0.3s; /* アニメーションの速度を設定 */
+}
+
+.prizes__body-top-box-left:hover  .prizes__body-top-box-left-body-text{
+  opacity: 0.7;
+}
+
+.prizes__body-top-box-left {
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 39%;
+    width: 100px;
+    height: 100px;
+    background: url(../img/prizes__body-top-box-left-image-before.png)no-repeat center center / cover;
+    @include mixin.mq(tab) {
+      width: 80px;
+    height: 80px;
+    }
+    @include mixin.mq(sp) {
+      width: 48px;
+    height: 48px;
+    left: 37%;
+    }
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: url(../img/prizes__body-top-box-left-image-after.png)no-repeat center center / cover;
+    border-radius: 0 0 10px 0;
+    @include mixin.mq(sp) {
+      width: 36px;
+    height: 36px;
+    }
+  }
+  &:hover::after{
+    opacity: 0.7;
+  }
+}
+
+
+.prizes__body-top-box-left-image {
+  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px 10px 0 0;
+  img{
+    width: 440px;
+   
+    @include mixin.mq(tab) {
+      width: 366px;
+    }
+    @include mixin.mq(sp) {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+.prizes__body-top-box-left-body {
+  background: color.$accent-color3;
+  padding: 32px 0;
+  border-radius: 0 0 10px 10px;
+  height: 120px;
+  @include mixin.mq(sp) {
+   padding: 9px 0;
+   height: 56px;
+  }
+}
+
+.prizes__body-top-box-left-body-text {
+  color: color.$base-color;
+text-align: center;
+font-family: font.$font-ja;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+@include mixin.mq(sp) {
+  font-size: 1.2rem;
+ }
+}
+
+.prizes__body-top-box-right:hover  .prizes__body-top-box-right-image img{
+  transform: scale(1.1); /* ホバー時の拡大率を設定 */
+  transition: transform 0.3s; /* アニメーションの速度を設定 */
+}
+
+.prizes__body-top-box-right:hover  .prizes__body-top-box-right-body-text{
+  opacity: 0.7;
+}
+
+.prizes__body-top-box-right {
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 39%;
+    width: 100px;
+    height: 100px;
+    background: url(../img/prizes__body-top-box-right-image-before.png)no-repeat center center / cover;
+    @include mixin.mq(tab) {
+      width: 80px;
+    height: 80px;
+    }
+    @include mixin.mq(sp) {
+      width: 48px;
+    height: 48px;
+    left: 37%;
+    }
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: url(../img/prizes__body-top-box-left-image-after.png)no-repeat center center / cover;
+    border-radius: 0 0 20px 0;
+    @include mixin.mq(sp) {
+      width: 36px;
+    height: 36px;
+    }
+  }
+  &:hover::after{
+    opacity: 0.7;
+  }
+}
+
+.prizes__body-top-box-right-image {
+  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px 10px 0 0;
+  img{
+    width: 440px;
+    
+    @include mixin.mq(tab) {
+      width: 366px;
+    }
+    @include mixin.mq(sp) {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+.prizes__body-top-box-right-body {
+  background: color.$accent-color3;
+  padding: 32px 0;
+  border-radius: 0 0 10px 10px;
+  height: 120px;
+  padding-top: 40px;
+  @include mixin.mq(sp) {
+    padding: 9px 0;
+    height: 56px;
+  }
+}
+
+.prizes__body-top-box-right-body-text {
+  color: color.$base-color;
+text-align: center;
+font-family: font.$font-ja;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+@include mixin.mq(sp) {
+  font-size: 1.2rem;
+}
+}
+
+.prizes__body-bottom {
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  @include mixin.mq(tab) {
+    gap: 24px;
+  }
+  @include mixin.mq(sp) {
+    margin-top: 38px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+.prizes__body-bottom-box-left:hover  .prizes__body-bottom-box-left-image img{
+  transform: scale(1.1); /* ホバー時の拡大率を設定 */
+  transition: transform 0.3s; /* アニメーションの速度を設定 */
+}
+
+.prizes__body-bottom-box-left:hover  .prizes__body-bottom-box-left-body-text{
+  opacity: 0.7;
+}
+
+.prizes__body-bottom-box-left {
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 36%;
+    width: 80px;
+    height: 80px;
+    background: url(../img/prizes__body-bottom-box-left-image-before.png)no-repeat center center / cover;
+    @include mixin.mq(tab) {
+      left: 33%;
+    }
+    @include mixin.mq(sp) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    background: url(../img/prizes__body-top-box-left-image-after.png)no-repeat center center / cover;
+    border-radius: 0 0 10px 0;
+    @include mixin.mq(sp) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &:hover::after{
+    opacity: 0.7;
+  }
+}
+
+.prizes__body-bottom-box-left-image {
+  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px 10px 0 0;
+  img{
+    width: 280px;
+    @include mixin.mq(tab) {
+      width: 240px;
+    }
+    @include mixin.mq(sp) {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+.prizes__body-bottom-box-left-body {
+  padding: 30px 0;
+  border-radius: 0 0 10px 10px;
+  height: 80px;
+  @include mixin.mq(sp) {
+    height: 56px;
+    padding: 18px 0;
+  }
+}
+
+.prizes__body-bottom-box-left-body-text{
+  color: color.$base-color;
+text-align: center;
+font-family: font.$font-ja;
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+@include mixin.mq(sp) {
+  font-size: 1.2rem;
+}
+}
+
+.prizes__body-bottom-box-center:hover  .prizes__body-bottom-box-center-image img{
+  transform: scale(1.1); /* ホバー時の拡大率を設定 */
+  transition: transform 0.3s; /* アニメーションの速度を設定 */
+}
+
+.prizes__body-bottom-box-center:hover  .prizes__body-bottom-box-center-body-text{
+  opacity: 0.7;
+}
+
+.prizes__body-bottom-box-center {
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 36%;
+    width: 80px;
+    height: 80px;
+    background: url(../img/prizes__body-bottom-box-center-image-before.png)no-repeat center center / cover;
+    @include mixin.mq(tab) {
+      left: 33%;
+    }
+    @include mixin.mq(sp) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    background: url(../img/prizes__body-top-box-left-image-after.png)no-repeat center center / cover;
+    border-radius: 0 0 10px 0;
+    @include mixin.mq(sp) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &:hover::after{
+    opacity: 0.7;
+  }
+}
+
+.prizes__body-bottom-box-center-image {
+  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px 10px 0 0;
+  img{
+    width: 280px;
+    
+    @include mixin.mq(tab) {
+      width: 240px;
+    }
+    @include mixin.mq(sp) {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+.prizes__body-bottom-box-center-body {
+  padding: 16px 0;
+  border-radius: 0 0 10px 10px;
+  height: 80px;
+  @include mixin.mq(sp) {
+    padding: 9px 0;
+    height: 56px;
+  }
+}
+
+.prizes__body-bottom-box-center-body-text{
+  color: color.$base-color;
+text-align: center;
+font-family: font.$font-ja;
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+@include mixin.mq(sp) {
+  font-size: 1.2rem;
+}
+}
+
+.prizes__body-bottom-box-right:hover  .prizes__body-bottom-box-right-image img{
+  transform: scale(1.1); /* ホバー時の拡大率を設定 */
+  transition: transform 0.3s; /* アニメーションの速度を設定 */
+}
+
+.prizes__body-bottom-box-right:hover  .prizes__body-bottom-box-right-body-text{
+  opacity: 0.7;
+}
+
+.prizes__body-bottom-box-right {
+  @include mixin.mq(sp) {
+    margin-top: 25px;
+  }
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 36%;
+    width: 80px;
+    height: 80px;
+    background: url(../img/prizes__body-bottom-box-right-image-before.png)no-repeat center center / cover;
+    @include mixin.mq(tab) {
+      left: 33%;
+    }
+    @include mixin.mq(sp) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &::after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    background: url(../img/prizes__body-top-box-left-image-after.png)no-repeat center center / cover;
+    border-radius: 0 0 20px 0;
+    @include mixin.mq(sp) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &:hover::after{
+    opacity: 0.7;
+  }
+}
+
+.prizes__body-bottom-box-right-image {
+  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px 10px 0 0;
+  img{
+    width: 280px;
+    
+    @include mixin.mq(tab) {
+      width: 240px;
+    }
+    @include mixin.mq(sp) {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+.prizes__body-bottom-box-right-body {
+  background: color.$accent-color3;
+  padding: 16px 0;
+  border-radius: 0 0 10px 10px;
+  height: 80px;
+  @include mixin.mq(sp) {
+    padding: 9px 0;
+    height: 56px;
+  }
+}
+
+.prizes__body-bottom-box-right-body-text{
+  color: color.$base-color;
+text-align: center;
+font-family: font.$font-ja;
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+@include mixin.mq(sp) {
+  font-size: 1.2rem;
+}
+}
+
+.prizes__body-link {
+  margin-top: 54px;
+  text-align: center;
+  @include mixin.mq(sp) {
+    margin-top: 32px;
+  }
+  a {
+    padding: 10px 40px;
+    font-size: 2rem;
+    @include mixin.mq(tab) {
+      padding: 8px 30px;
+      font-size: 1.8rem;
+    }
+    @include mixin.mq(sp) {
+      padding: 6px 24px;
+      font-size: 1.6rem;
+    }
+  }
+}
+/* モーダルCSS */
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+.modal__bg {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  background: #fff;
+  border-radius: 24px;
+  text-align: center;
+  padding-bottom: 106px;
+  @include mixin.mq(sp) {
+    width: 336px;
+    padding-bottom: 56px;
+  }
+}
+.js-modal-close {
+  cursor: pointer;
+}
+.modal__content-image1,
+.modal__content-image2,
+.modal__content-image3,
+.modal__content-image4,
+.modal__content-image5 {
+  border-radius: 24px 24px 0 0;
+}
+.modal__content-title {
+  margin-top: 32px;
+  color: color.$base-color;
+  font-family: font.$font-ja;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  @include mixin.mq(sp) {
+    margin-top: 39px;
+    font-size: 1.6rem;
+  }
+}
+.modal__content-text {
+  margin-top: 12px;
+  color: #000;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  @include mixin.mq(sp) {
+    font-size: 1.2rem;
+  }
+}
+
+.modal__content-link {
+  margin-top: 24px;
+  text-align: center;
+  @include mixin.mq(sp) {
+    margin-top: 16px;
+  }
+}
+.button {
+  padding: 6px 24px;
+  font-size: 1.6rem;
+}

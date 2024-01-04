@@ -1,0 +1,94 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+footer2
+===============================*/
+.footer__wave-image {
+    margin-top: 120px;
+    @include mixin.mq(sp) {
+        margin-top: 24px;
+    }
+  }
+  .footer__copy {
+    text-align: center;
+    padding-bottom: 32px;
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+    background: color.$main-color;
+    @include mixin.mq(sp) {
+        font-size: 1rem;
+        padding-bottom: 24px;
+    }
+  }
+  
+  /*================================
+  ページTOPに戻る
+  ===============================*/
+  .page__top-pc{
+      position: fixed;
+      right: 40px;
+      bottom: 40px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      z-index: 500;
+  
+      @include mixin.mq(sp) {
+          display: none;
+      }
+    
+      &.is-show {
+        opacity: 1;
+        visibility: visible;
+      }
+    
+      a {
+        img {
+          width: 100px;
+          height: 104px;
+          object-fit: cover;
+        }
+    
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .page__top-sp{
+      transition: all 0.3s ease 0s;
+      z-index: 500;
+  
+      @include mixin.mq(pc) {
+          display: none;
+      }
+      @include mixin.mq(tab) {
+          display: none;
+      }
+    
+      &.is-show {
+        opacity: 1;
+        visibility: visible;
+      }
+    
+      a {
+        img {
+          width: 100px;
+          height: 104px;
+          object-fit: cover;
+          @include mixin.mq(sp) {
+            width: 74px;
+            height: 77px;
+            margin: 0 auto;
+          }
+        }
+    
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }

@@ -1,0 +1,200 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+qa
+===============================*/
+.qa {
+  padding: 120px 0;
+
+  @include mixin.mq(tab) {
+    padding: 60px 0px;
+  }
+
+  @include mixin.mq(sp) {
+    padding: 50px 20px 26px;
+  }
+}
+.qa__heading {
+  text-align: center;
+}
+
+.qa__heading-sub-title {
+  margin-top: 8px;
+  @include mixin.mq(sp) {
+    margin-top: 1px;
+  }
+}
+
+.qa__heading-title {
+  margin-top: 8px;
+  padding-bottom: 3px;
+
+  @include mixin.mq(sp) {
+    margin-top: 5px;
+  }
+}
+
+.qa__items {
+  max-width: 1024px;
+  margin: 48px auto 0;
+  @include mixin.mq("tab") {
+    max-width: 100%;
+    margin: 48px auto 0;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 95%;
+    margin: 24px auto 0;
+  }
+}
+.qa__item {
+  border-radius: 16px;
+  background: #fff;
+  border: 2px solid color.$base-color;
+  & + & {
+    margin-top: 26px;
+    @include mixin.mq(sp) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.qa__box-q {
+  position: relative;
+  padding: 28px 24px 28px 60px;
+  color: color.$base-color;
+  font-family: font.$font-ja;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  background: #fff;
+  border-radius: 16px;
+  @include mixin.mq(sp) {
+    font-size: 1.4rem;
+    padding: 12px 50px 12px 40px;
+  }
+}
+
+.qa__box-q::before {
+  content: "Q";
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 16px;
+  width: 29px;
+  height: 35px;
+  color: color.$main-color3;
+  font-family: font.$font-en3;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.25;
+
+  @include mixin.mq(sp) {
+    width: 6px;
+    height: 6px;
+    left: 6px;
+    top: 30%;
+    padding-right: 8px;
+  }
+}
+
+.qa__box-icon {
+  width: 40px;
+  height: 40px;
+  background: color.$main-color3;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px; 
+  @include mixin.mq(sp) {
+    width: 30px;
+    height: 30px;
+    right: 14px;
+  }
+
+  &.is-open {
+    .qa-box-bar2 {
+      transform: rotate(90deg);
+    }
+  }
+}
+.qa__box-content-link {
+  border-bottom: 1px solid color.$base-color;
+}
+
+.qa__box-bar1 {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  left: 52%;
+  transform: translateX(-50%); 
+  @include mixin.mq(sp) {
+    width: 20px;
+  }
+}
+
+.qa__box-bar2 {
+  width: 3px;
+  height: 20px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 53%;
+  transform: translateY(-50%); 
+  left: 48%;
+  transition: all 0.3s ease 0s;
+  @include mixin.mq(sp) {
+    height: 20px;
+    left: 45%;
+  }
+}
+
+.qa__box-a {
+  background: #f5f5f5;
+  color: color.$base-color;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 24px;
+  padding-left: 60px;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  @include mixin.mq(sp) {
+    font-size: 1.4rem;
+    padding: 12px 30px 12px 50px;
+  }
+}
+
+.qa__box-a::before {
+  content: "A";
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 16px;
+  width: 29px;
+  height: 35px;
+  color: color.$main-color3;
+  font-family: font.$font-en3;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.25;
+
+  @include mixin.mq(sp) {
+    width: 6px;
+    height: 6px;
+    left: 6px;
+    top: 30%;
+    padding-right: 8px;
+  }
+}
